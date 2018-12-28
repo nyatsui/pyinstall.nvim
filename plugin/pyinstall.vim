@@ -7,6 +7,7 @@ if exists('g:loaded_pyinstall')
   finish
 endif
 let g:loaded_pyinstall = 1
-let s:script_dir = expand('<sfile>:p:h')
 
-call pyinstall#install(s:script_dir)
+if g:pyinstall#install_at_startup == 1
+  call pyinstall#install()
+endif
