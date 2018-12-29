@@ -32,7 +32,7 @@ if [ ! -e "${PYENV_ROOT}/versions/${ENV_NAME}" ]; then
   $PYENV_BIN local $ENV_NAME
 fi
 
-pip install neovim
+pip install pynvim
 
 for m in ${@:3}
 do

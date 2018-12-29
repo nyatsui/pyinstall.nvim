@@ -6,7 +6,7 @@ MacOS and Linux are only supported.
 ## Usage:
 
 Define python version, env name and python modules which you want to install.
-pynvim and neovim are installed as default.
+pynvim module is installed as default.
 
     let g:pyinstall#py_version = '3.6.1'
     let g:pyinstall#envname = 'nvim-env'
