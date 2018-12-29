@@ -19,7 +19,6 @@ if !exists('g:pyinstall#debug')
 endif
 
 let s:plugin_dir = expand('<sfile>:p:h:h') . '/plugin/'
-let g:python3_host_prog = expand(s:plugin_dir . 'pyenv/versions/' . g:pyinstall#envname . '/bin/python')
 
 function! pyinstall#install() abort
 
