@@ -8,7 +8,5 @@ if exists('g:loaded_pyinstall')
 endif
 let g:loaded_pyinstall = 1
 
-call pyinstall#install()
-
 let s:plugin_dir = expand('<sfile>:p:h')
 let g:python3_host_prog = expand(s:plugin_dir . 'pyenv/versions/' . g:pyinstall#envname . '/bin/python')
