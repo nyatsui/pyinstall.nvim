@@ -1,7 +1,8 @@
 # pyinstall.nvim
 
 This is a vimscript for installing python environment dedicated of vim independently from your system python environment.
-MacOS and Linux are only supported.
+MacOS and Linux are only supported.  
+It is only tested on macOS.
 
 ## Usage:
 

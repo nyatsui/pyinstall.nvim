@@ -6,13 +6,14 @@ DIR=$( cd "$( dirname "$0" )" && pwd )
 cd $DIR
 
 PYENV_ROOT="${DIR}/pyenv"
-PYENV_BIN=../pyenv/bin/pyenv
+PYENV_D="${DIR}/../pyenv"
+PYENV_BIN="${PYENV_D}/bin/pyenv"
 PY_VERSION=$1
 ENV_NAME=$2
 PROMPT_COMMAND='prompt'
 
-if [ ! -e $PYENV_ROOT/plugin/spyenv-virtualenv]; then
-  cd $PYENV_ROOT/plugins
+if [ ! -e "${PYENV_D}/plugins/pyenv-virtualenv" ]; then
+  cd ${PYENV_D}/plugins
   ln -s ../../pyenv-virtualenv pyenv-virtualenv
   cd -
 fi
