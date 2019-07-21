@@ -19,12 +19,17 @@ if [ ! -e "${PYENV_ROOT}/versions/${PY_VERSION}" ]; then
   pyenv local $PY_VERSION
 fi
 
-pip install pynvim
+pip install -U pynvim
 
+py_modules=""
 for m in ${@:2}
 do
-  pip install ${m}
+  py_modules="${py_modules} ${m}"
 done
+
+if ["$py_modules" != ""]; then
+  pip install ${py_modules}
+fi
 
 # pip list
 
