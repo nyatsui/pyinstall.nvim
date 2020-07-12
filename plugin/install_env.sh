@@ -27,7 +27,7 @@ do
   py_modules="${py_modules} ${m}"
 done
 
-if ["$py_modules" != ""]; then
+if [[ -n "$py_modules" ]]; then
   pip install ${py_modules}
 fi
 
