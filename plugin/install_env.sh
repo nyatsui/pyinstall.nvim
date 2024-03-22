@@ -2,28 +2,18 @@
 set -eu
 
 DIR=$( cd "$( dirname "$0" )" && pwd )
-# echo $DIR
+echo $DIR
 cd $DIR
 
-export PYENV_ROOT="${DIR}/../pyenv"
-export PATH="$PYENV_ROOT/bin:$PATH"
-PY_VERSION=$1
-export PROMPT_COMMAND='prompt'
+# create env
+python -m venv env
 
-if command -v pyenv 1>/dev/null 2>&1; then
-  eval "$(pyenv init -)"
-fi
-
-if [ ! -e "${PYENV_ROOT}/versions/${PY_VERSION}" ]; then
-  pyenv install -s $PY_VERSION
-  pyenv local $PY_VERSION
-fi
-PYBIN=${PYENV_ROOT}/versions/${PY_VERSION}/bin/python
+PYBIN="${DIR}/../env/bin/python"
 
 ${PYBIN} -m pip install -U pynvim
 
 py_modules=""
-for m in ${@:2}
+for m in ${@:1}
 do
   py_modules="${py_modules} ${m}"
 done
