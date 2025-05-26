@@ -4,9 +4,10 @@ set -eu
 DIR=$( cd "$( dirname "$0" )" && pwd )
 echo $DIR
 cd $DIR
+cd ../
 
 # create env
-python -m venv env
+python3 -m venv env
 
 PYBIN="${DIR}/../env/bin/python"
 
